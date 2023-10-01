@@ -35,6 +35,11 @@ import (
 )
 ```
 
+Setelah itu install libary dengan perintah berikut:
+
+```sh
+go mod tidy
+```
 
 
 
