@@ -5,3 +5,4 @@ Sebelum masuk masuk ke koding, kita perlu membuat credentials Oauth di console G
 ## Membuat Credentials Oauth
 Pertama, kunjungi <a href="https://console.cloud.google.com/apis/credentials">Google Cloud Console</a>.
 Setelah itu klik <b>CREATE CREDENTIALS</b> pada navbar atas dan pilih <b>OAuth client ID</b>.
+<img  src="img/console-1.png">
