@@ -17,3 +17,19 @@ Di sini akan kita isi dengan <b>http://localhost:8080</b>. Lanjut di bagian Auth
 <img src="img/console-3.png">
 <p>Sampai di tahap ini, pembuatan credentials Oauth sudah selesai.</p>
 
+## Implementasi Go 
+<p>Siapkan folder project.</p>
+```sh 
+mkdir belajar-oauth && cd belajar-oauth && go mod init belajar-oauth
+```
+<p>Import library berikut untuk berinteraksi dengan Oauth Google.</p>
+```go 
+import (
+    "golang.org/x/oauth2"
+	"golang.org/x/oauth2/google"
+)
+```
+
+
+
+
