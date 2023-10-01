@@ -19,10 +19,15 @@ Di sini akan kita isi dengan <b>http://localhost:8080</b>. Lanjut di bagian Auth
 
 ## Implementasi Go 
 <p>Siapkan folder project.</p>
+
+
 ```sh 
 mkdir belajar-oauth && cd belajar-oauth && go mod init belajar-oauth
 ```
+
 <p>Import library berikut untuk berinteraksi dengan Oauth Google.</p>
+
+
 ```go 
 import (
     "golang.org/x/oauth2"
