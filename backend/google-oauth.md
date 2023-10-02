@@ -127,5 +127,12 @@ func getUserDataFromGoogle(code string) ([]byte, error) {
 
 
 ```
+Terakhir, pada kita tambahkan routes.
+
+```go 
+http.HandleFunc("/auth/google/login", handleGoogleLogin)
+http.HandleFunc("/auth/google/callback", handleCallbackGoogle)
+```
+
 
 Selesai
