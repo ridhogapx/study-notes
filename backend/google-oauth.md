@@ -88,3 +88,33 @@ func handleCallbackGoogle(w http.ResponseWriter, r *http.Request) {
     
 }
 ```
+Buat helper function untuk mendapatkan Informasi User.
+
+```go 
+func getUserDataFromGoogle(code string) ([]byte, error) {
+    // Gunakan parameter "code" untuk mendapat token dan informasi user 
+    token ,err := oauthConfig.Exchange(context.Background(), code)
+    
+    if err != nil {
+        return nil, fmt.Errorf("code exchange wrong")
+    }
+
+    resp, err := http.Get(oauthGoogleURLAPI + token.AccessToken)
+
+    if err != nil {
+        return nil, fmt.Errorf("failed getting user info: %s", err.Error())
+    }
+
+    defer resp.Body.Close()
+    
+    contents, err := ioutil.ReadAll(resp.Body)
+
+    if err != nil {
+        return nil, fmt.Errorf("failed read response: %s", err.Error())
+    }
+
+    return contents, nil
+}
+
+
+```
