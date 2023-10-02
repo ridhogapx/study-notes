@@ -45,7 +45,7 @@ Selanjutnya, kita initial config OAuth Credentials milik kita.
 
 
 ```go 
-var OauthConfig = oauth2.Config{
+var oauth2.Config{
     RedirectURL: "http://localhost:8080/auth/google/callback", // Samakan dengan yang ada pada Redirect URIs
     ClientID: "YOUR_CLIENT_ID",
     ClientSecret: "YOUR_SECRET",
@@ -57,7 +57,7 @@ var OauthConfig = oauth2.Config{
 Jangan lupa deklarasikan juga OAuth URL.
 
 ```go 
-const oauthGoogleURLAPI = "https://www.googleapis.com/oauth2/v2/v2/userinfo?access_token="
+const oauthGoogleURLAPI = "https://www.googleapis.com/oauth2/v2/userinfo?access_token="
 ```
 
 Buat handler untuk redirect ke OAuth Google.
@@ -128,4 +128,4 @@ func getUserDataFromGoogle(code string) ([]byte, error) {
 
 ```
 
-Selesai.
+Selesai
