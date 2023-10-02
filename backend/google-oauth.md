@@ -74,3 +74,17 @@ Terapkan handler tadi route.
 ```go 
 http.HandleFunc("/auth/google/login", handleGoogleLogin)
 ```
+
+Buat callback handler Google OAuth.
+
+```go 
+func handleCallbackGoogle(w http.ResponseWriter, r *http.Request) {
+    // State harus unique
+    if r.FormValue("state") != "state" {
+        fmt.Println("Invalid oauth google state")
+        return
+    }
+
+    
+}
+```
