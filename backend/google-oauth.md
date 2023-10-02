@@ -59,3 +59,18 @@ Jangan lupa deklarasikan juga OAuth URL.
 ```go 
 const oauthGoogleURLAPI = "https://www.googleapis.com/oauth2/v2/v2/userinfo?access_token="
 ```
+
+Buat handler untuk redirect ke OAuth Google.
+
+```go 
+func handleGoogleLogin(w http.ResponseWriter, r *http.Request) {
+    url := oauthConfig.AuthCodeURL("state")
+    http.Redirect(w, r, url, http.StatusTemporaryRedirect)
+}
+```
+
+Terapkan handler tadi route.
+
+```go 
+http.HandleFunc("/auth/google/login", handleGoogleLogin)
+```
