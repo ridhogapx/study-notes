@@ -85,6 +85,15 @@ func handleCallbackGoogle(w http.ResponseWriter, r *http.Request) {
         return
     }
 
+    data, err := getUserDataFromGoogle(r.FormValue("code"))
+
+    if err != nil {
+        fmt.Println("Failed to retrieve user information:", err)
+        return
+    }
+
+    // Me-return response 
+    fmt.Fprintf(w, "UserInfo: %s \n", data)
     
 }
 ```
@@ -118,3 +127,5 @@ func getUserDataFromGoogle(code string) ([]byte, error) {
 
 
 ```
+
+Selesai.
