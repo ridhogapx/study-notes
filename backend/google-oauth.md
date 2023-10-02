@@ -45,7 +45,7 @@ Selanjutnya, kita initial config OAuth Credentials milik kita.
 
 
 ```go 
-var oauth2.Config{
+var OauthConfig = oauth2.Config{
     RedirectURL: "http://localhost:8080/auth/google/callback", // Samakan dengan yang ada pada Redirect URIs
     ClientID: "YOUR_CLIENT_ID",
     ClientSecret: "YOUR_SECRET",
