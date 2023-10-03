@@ -4,7 +4,6 @@ Berikut sample Dockerizing pada Go Apps.
 ```dockerfile
 FROM golang:1.20.6-alpine3.18
 
-RUN mkdir /nama-project
 WORKDIR /nama-project
 
 COPY go.mod /nama-project
