@@ -33,8 +33,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse 
          
         } catch(err) {
             res.json({
-                        message: err.response.data
-                    })
+                message: err.response.data
+            })
         }
 
     }
