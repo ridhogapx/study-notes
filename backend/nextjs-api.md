@@ -41,3 +41,44 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse 
 }
 
 ```
+
+# Client Consume 
+Berikut adalah contoh simple consume API pada App Router.
+
+```typescript
+// Anggap saja ini adalah state data dari Form input
+
+interface payloadAPI {
+    email: string,
+    password: string
+}
+
+const data = useState<payloadAPI>({
+        email: "",
+        password: "",
+    })
+
+// Update State di onChange form 
+// ....
+
+// Trigger API Calls 
+const handleBtn = async(e: any) => {
+    e.preventDefault()
+    // Kita arahkan url Axios ke NextJS internal API
+
+    try {
+        const login = async axios.post("/api/login", {
+           // Menggunakan data state 
+            email: data.email
+            password: data.password
+        })
+    } catch(err) {
+        // handling error
+    }
+
+    
+}
+
+
+```
+
